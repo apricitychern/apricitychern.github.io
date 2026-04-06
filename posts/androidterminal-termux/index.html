@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Android Terminal - Termux | Log Book of Apricity</title>
+<meta name="keywords" content="termux, terminal">
+<meta name="description" content="I want to have a terminal on my mobile phone and I found the Termux.">
+<meta name="author" content="">
+<link rel="canonical" href="https://apricitychern.github.io/posts/androidterminal-termux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://apricitychern.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://apricitychern.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://apricitychern.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://apricitychern.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://apricitychern.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://apricitychern.github.io/posts/androidterminal-termux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://apricitychern.github.io/posts/androidterminal-termux/">
+  <meta property="og:site_name" content="Log Book of Apricity">
+  <meta property="og:title" content="Android Terminal - Termux">
+  <meta property="og:description" content="I want to have a terminal on my mobile phone and I found the Termux.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-01T02:02:20+08:00">
+    <meta property="article:modified_time" content="2024-01-01T02:02:20+08:00">
+    <meta property="article:tag" content="Termux">
+    <meta property="article:tag" content="Terminal">
+      <meta property="og:image" content="https://apricitychern.github.io/posts/androidterminal-termux/thumbnail.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://apricitychern.github.io/posts/androidterminal-termux/thumbnail.png">
+  <meta name="twitter:title" content="Android Terminal - Termux">
+  <meta name="twitter:description" content="I want to have a terminal on my mobile phone and I found the Termux.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://apricitychern.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Android Terminal - Termux",
+      "item": "https://apricitychern.github.io/posts/androidterminal-termux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Android Terminal - Termux",
+  "name": "Android Terminal - Termux",
+  "description": "I want to have a terminal on my mobile phone and I found the Termux.\n",
+  "keywords": [
+    "termux", "terminal"
+  ],
+  "articleBody": "I want to have a terminal on my mobile phone and I found the Termux.\nAbout Termux Termux is an Android terminal emulator and Linux environment application that works directly with no rooting or setup required.\nfrom Termux Wiki\nWith Termux, you almost can do any things that you can do on Linux when you use Android. However, there are also some difference between them if you learn more about Termux such as file organization, environment variable and so on.\nInstall Termux According to the Termux Wiki, now we should install the termux from F-droid, althought we also can install the old version from Goole Play.\nHowever, there are serval Apps(Addons) about termux and we shouldn’t mix them from different platform.\nFor addons, I think the Termux:API and Termux:X11 (introduced after) are the most useful.\nPackages manage Termux has the package manager pkg, and I suggest you read the help page of pkg using the command pkg help.\nThere are some common commands:\npkg update: update apt databases from configured repositories pkg upgrade: upgrade all installed packages pkg search : search package by query(name or part of description) pkg install : install pkgName pkg uninstall : uninstall pkgName pkg autoclean: remove outdated packages Environment variable There are some important environment variable in Termux:\nPREFIX: it is like the root direcory of Linux\n~ $ echo $PREFIX /data/data/com.termux/files/usr HOME: the home path of user(only you)\n~ $ echo $HOME /data/data/com.termux/files/home Using this environment variable can reduce the command length and easy to transplant.\nKeyboard When you open Termux, you can see two raw of key at the bottom of the screen, you can custom it by the extra-keys in ~/.termux/termux.properties(if not exist, create one).\nYou also can slide left to right to open the sidebar and long press the KEYBOARD button to show or hide the keyboard.\nSession Termux allow you to create multiple sessions, you can open the sidebar and press the NEW SESSIOIN to create a new seesion.\nGreet you can see the greeting message when you start Termux:\nWelcome to Termux! Docs: https://termux.dev/docs Donate: https://termux.dev/donate Community: https://termux.dev/community Working with packages: - Search: pkg search - Install: pkg install - Upgrade: pkg upgrade Subscribing to additional repositories: - Root: pkg install root-repo - X11: pkg install x11-repo For fixing any repository issues, try 'termux-change-repo' command. Report issues at https://termux.dev/issues Access storage Because of the Android permission restrictions, you have to enter the command below to request the file access permission.\ntermux-setup-storage when you press enter, your phone will show a dialog says “Termux trying access…”, please press the allow button, and then you can see a directory named storage under you home path.\n~ $ ls storage In the storage directory, there are only some soft links file which link to your files in your phone storage, you can also use ln command to create your self or use the absoulte path in command.\n~ $ ls -al storage/ total 7 drwx------ 2 u0_a219 u0_a219 3452 Jan 19 14:39 . drwx------ 5 u0_a219 u0_a219 3452 Jan 19 14:39 .. lrwxrwxrwx 1 u0_a219 u0_a219 24 Jan 19 14:39 dcim -\u003e /storage/emulated/0/DCIM lrwxrwxrwx 1 u0_a219 u0_a219 28 Jan 19 14:39 downloads -\u003e /storage/emulated/0/Download lrwxrwxrwx 1 u0_a219 u0_a219 26 Jan 19 14:39 movies -\u003e /storage/emulated/0/Movies lrwxrwxrwx 1 u0_a219 u0_a219 25 Jan 19 14:39 music -\u003e /storage/emulated/0/Music lrwxrwxrwx 1 u0_a219 u0_a219 28 Jan 19 14:39 pictures -\u003e /storage/emulated/0/Pictures lrwxrwxrwx 1 u0_a219 u0_a219 19 Jan 19 14:39 shared -\u003e /storage/emulated/0 Configure Termux At first, we update the Termux:\npkg update \u0026\u0026 pkg upgrade Before everything, althought Termux is a very useful and powerful tool on Android, it’s recommended that you type on your PC ranther than on your phone. So I will configure the ssh first so that I can type commands on my PC and execute them on my phone.\nssh install openssh on Termux:\npkg install openssh generate the key on PC and send public key to Termux:\n(on PC)\nssh-keygen -t ed25519 -C \"termux\" -f ~/.ssh/id_termux_ed25519 You can press enter to ignore the password easily.\nNow you can the see the public key and private key under the ~/.ssh\n(on PC)\n$ ls .ssh/id_termux_ed25519* .ssh/id_termux_ed25519 .ssh/id_termux_ed25519.pub To make the termux can identify the PC, copy the content in .ssh/id_termux_ed25519.pub to $HOME/.ssh/authorized_keys on Termux\n(on Termux)\necho \"ssh-ed25519 ...\" \u003e\u003e $HOME/.ssh/authorized_keys start openssh service on Termux\nModify the configure to forbid the password connect\nsed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' $PREFIX/etc/ssh/sshd_config (on Termux)\nsshd This will make sshd listent on the 8022 port and the ssh client can connect it throught the port.\nconnect\nIn order to connect to the termux, we need to know the ip of the phone, you can get it throught the WIFI setting in phone. You also can get it use ip addr, but you may have to install iproute2 first.\n(on Termux)\n~ $ ip addr The program ip is not installed. Install it by executing: pkg install iproute2 Connect to the Termux using ssh -p 8022 -i ~/.ssh/id_termux_ed25519 and type yes to continue connection.\nEditor In order to edit file, I firstly install editor. I use neovim here, you can use other if you want.\npkg install neovim Common software Install some common software\npkg install git Development You can install the language develop kit\nC/C++\npkg install clang Python\npkg install python Desktop Environment You can install Desktop Environment in Termux Now, for detail you can see Termux:X11.\nI choose the Xfce for my desktop because it’s light.\nsubscribe x11-repo\npkg install x11-repo install the termux-x11\nYou have to install the termux-x11-....deb(from termux-x11-release) on termux.\npkg install You can get the termux-x11 app from termux-x11-release and then install the termux-x11 app on your phone.\nRemember to choose the apk for your phone architecture(you can get it by executing uname -a)\ninstall Xfce\npkg install xfce start the Xfce\ntermux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\" Now you can launch the termux-x11 app to use the Xfce desktop.\nIf there is any exception, you can get help from Termux:X11.\nTermux-X11 use the x-org to display, but you also can use vnc to display.\ninstall tigervnc\npkg install tigervnc start vnc\nvncserver :1 As the first time you start vnc server you have to setup the password.\nActually after you finish it you can start vnc viewer now, but you will see a black window.\nNow use the vncserver -kill :1 to kill the vncserver\nconfigure vnc\nEdit the .vnc/xstartup and replace the twm \u0026 with xfce4-session \u0026 and then restart the vncserver.\nconnect to the vncserver\nI use gtk-vnc on my PC so I connect it using gvncviwer phone_ip:1.\nYou also can connect it on your phone use VNC Viewer app\nTerminal I use the termux-ohmyzsh to make the terminal more beautiful.\ninstall zsh\npkg install zsh install termux-ohmyzsh\nsh -c \"$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)\" Choose the color schema and font you like and then reboot the Termux.\nmodified the theme\nBecause the origin theme show the username and host name with the full path, it’s too long for the prompt, we modified the theme.\ncd $HOME/.oh-my-zsh/custom/themes cp ../../themes/agnoster.zsh-theme ./agnoster-modified.zsh-theme Then we modified the agnoster-modified.zsh-theme:\nsearch the prompt_dir function and replace the %~ to %1~. It will make the prompt only show the current directory. search the prompt_context function and replace the %n@%m with anything you like modified $HOME/.zshrc to set ZSH_THEME=\"xxx\" to ZSH_THEME=\"agnoster-modified\" source the .zshrc If you finish all of above, you will get terminal as below:\nproot-distro proot-distro help you manage the proot linux distribution.\nUse pkg install proot-distro to install the package.\nAfter that, you can use proot-distro list to see which distribution you can install, and then use proot-distro install to install the linux.\nFinally, you can use proot-distro login to login.\nThe proot like the docker, provide you a truely Linux environment, you even can install the DE like Xfce4 in the proot.\nTODO\nInstall Docker TODO\n",
+  "wordCount" : "1323",
+  "inLanguage": "en",
+  "image": "https://apricitychern.github.io/posts/androidterminal-termux/thumbnail.png","datePublished": "2024-01-01T02:02:20+08:00",
+  "dateModified": "2024-01-01T02:02:20+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://apricitychern.github.io/posts/androidterminal-termux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Log Book of Apricity",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://apricitychern.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://apricitychern.github.io/" accesskey="h" title="Log Book of Apricity (Alt + H)">Log Book of Apricity</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://apricitychern.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Android Terminal - Termux
+    </h1>
+    <div class="post-meta"><span title='2024-01-01 02:02:20 +0800 CST'>January 1, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>I want to have a terminal on my mobile phone and I found the <strong>Termux</strong>.</p>
+<h2 id="about-termux">About Termux<a hidden class="anchor" aria-hidden="true" href="#about-termux">#</a></h2>
+<blockquote>
+<p>Termux is an Android terminal emulator and Linux environment application
+that works directly with no rooting or setup required.</p>
+<p>from <a href="https://wiki.termux.com/">Termux Wiki</a></p></blockquote>
+<p>With Termux, you almost can do any things that you can do on Linux when you use Android.
+However, there are also some difference between them if you learn more about Termux such as file organization, environment variable and so on.</p>
+<h3 id="install-termux">Install Termux<a hidden class="anchor" aria-hidden="true" href="#install-termux">#</a></h3>
+<p>According to the <a href="https://wiki.termux.com/wiki/Termux_Google_Play">Termux Wiki</a>,
+now we should install the termux from <a href="https://f-droid.org/packages/com.termux/">F-droid</a>,
+althought we also can install the old version from Goole Play.</p>
+<p>However, there are serval Apps(Addons) about termux and we <strong>shouldn&rsquo;t</strong> mix them from different platform.</p>
+<p>For addons, I think the Termux:API and Termux:X11 (introduced after) are the most useful.</p>
+<h3 id="packages-manage">Packages manage<a hidden class="anchor" aria-hidden="true" href="#packages-manage">#</a></h3>
+<p>Termux has the package manager <code>pkg</code>, and I suggest you read the help page of <code>pkg</code> using the command <code>pkg help</code>.</p>
+<p>There are some common commands:</p>
+<ul>
+<li><code>pkg update</code>: update apt databases from configured repositories</li>
+<li><code>pkg upgrade</code>: upgrade all installed packages</li>
+<li><code>pkg search &lt;query&gt;</code>: search package by query(name or part of description)</li>
+<li><code>pkg install &lt;pkgName&gt;</code>: install pkgName</li>
+<li><code>pkg uninstall &lt;pkgName&gt;</code>: uninstall pkgName</li>
+<li><code>pkg autoclean</code>: remove outdated packages</li>
+</ul>
+<h3 id="environment-variable">Environment variable<a hidden class="anchor" aria-hidden="true" href="#environment-variable">#</a></h3>
+<p>There are some important environment variable in Termux:</p>
+<ul>
+<li>
+<p><code>PREFIX</code>: it is like the root direcory of Linux</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~ $ echo $PREFIX
+</span></span><span style="display:flex;"><span>/data/data/com.termux/files/usr
+</span></span></code></pre></div></li>
+<li>
+<p><code>HOME</code>: the home path of user(only you)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~ $ echo $HOME
+</span></span><span style="display:flex;"><span>/data/data/com.termux/files/home
+</span></span></code></pre></div></li>
+</ul>
+<p>Using this environment variable can reduce the command length and easy to transplant.</p>
+<h3 id="keyboard">Keyboard<a hidden class="anchor" aria-hidden="true" href="#keyboard">#</a></h3>
+<p>When you open Termux, you can see two raw of key at the bottom of the screen,
+you can custom it by the <code>extra-keys</code> in <code>~/.termux/termux.properties</code>(if not exist, create one).</p>
+<p>You also can slide left to right to open the sidebar and long press the <code>KEYBOARD</code> button to show or hide the keyboard.</p>
+<p><img alt="keyboard" loading="lazy" src="/posts/androidterminal-termux/termux-sidebar-keyboard.jpg" title="sidebar keyboard"></p>
+<h3 id="session">Session<a hidden class="anchor" aria-hidden="true" href="#session">#</a></h3>
+<p>Termux allow you to create multiple sessions, you can open the sidebar and press the <code>NEW SESSIOIN</code> to create a new seesion.</p>
+<p><img alt="session" loading="lazy" src="/posts/androidterminal-termux/termux-sidebar-session.jpg" title="sidebar session"></p>
+<h3 id="greet">Greet<a hidden class="anchor" aria-hidden="true" href="#greet">#</a></h3>
+<p>you can see the greeting message when you start Termux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>Welcome to Termux!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Docs:       https://termux.dev/docs
+</span></span><span style="display:flex;"><span>Donate:     https://termux.dev/donate
+</span></span><span style="display:flex;"><span>Community:  https://termux.dev/community
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Working with packages:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- Search:  pkg search &lt;query&gt;
+</span></span><span style="display:flex;"><span>- Install: pkg install &lt;package&gt;
+</span></span><span style="display:flex;"><span>- Upgrade: pkg upgrade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Subscribing to additional repositories:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- Root:    pkg install root-repo
+</span></span><span style="display:flex;"><span>- X11:     pkg install x11-repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For fixing any repository issues,
+</span></span><span style="display:flex;"><span>try &#39;termux-change-repo&#39; command.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Report issues at https://termux.dev/issues
+</span></span></code></pre></div><h3 id="access-storage">Access storage<a hidden class="anchor" aria-hidden="true" href="#access-storage">#</a></h3>
+<p>Because of the Android permission restrictions, you have to enter the command below to request the file access permission.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>termux-setup-storage
+</span></span></code></pre></div><p>when you press enter, your phone will show a dialog says &ldquo;Termux trying access&hellip;&rdquo;, please press the <em>allow</em> button,
+and then you can see a directory named <code>storage</code> under you home path.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~ $ ls
+</span></span><span style="display:flex;"><span>storage
+</span></span></code></pre></div><p>In the <code>storage</code> directory, there are only some soft links file which link to your files in your phone storage,
+you can also use <code>ln</code> command to create your self or use the absoulte path in command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~ $ ls -al storage/
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">2</span> u0_a219 u0_a219 <span style="color:#ae81ff">3452</span> Jan <span style="color:#ae81ff">19</span> 14:39 .
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">5</span> u0_a219 u0_a219 <span style="color:#ae81ff">3452</span> Jan <span style="color:#ae81ff">19</span> 14:39 ..
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">24</span> Jan <span style="color:#ae81ff">19</span> 14:39 dcim -&gt; /storage/emulated/0/DCIM
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">28</span> Jan <span style="color:#ae81ff">19</span> 14:39 downloads -&gt; /storage/emulated/0/Download
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">26</span> Jan <span style="color:#ae81ff">19</span> 14:39 movies -&gt; /storage/emulated/0/Movies
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">25</span> Jan <span style="color:#ae81ff">19</span> 14:39 music -&gt; /storage/emulated/0/Music
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">28</span> Jan <span style="color:#ae81ff">19</span> 14:39 pictures -&gt; /storage/emulated/0/Pictures
+</span></span><span style="display:flex;"><span>lrwxrwxrwx <span style="color:#ae81ff">1</span> u0_a219 u0_a219   <span style="color:#ae81ff">19</span> Jan <span style="color:#ae81ff">19</span> 14:39 shared -&gt; /storage/emulated/0
+</span></span></code></pre></div><h2 id="configure-termux">Configure Termux<a hidden class="anchor" aria-hidden="true" href="#configure-termux">#</a></h2>
+<p>At first, we update the Termux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg update <span style="color:#f92672">&amp;&amp;</span> pkg upgrade
+</span></span></code></pre></div><p>Before everything, althought Termux is a very useful and powerful tool on Android, it&rsquo;s recommended that you type on your PC ranther than on your phone.
+So I will configure the ssh first so that I can type commands on my PC and execute them on my phone.</p>
+<h3 id="ssh">ssh<a hidden class="anchor" aria-hidden="true" href="#ssh">#</a></h3>
+<ol>
+<li>
+<p>install <code>openssh</code> on Termux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install openssh
+</span></span></code></pre></div></li>
+<li>
+<p>generate the key on PC and send public key to Termux:</p>
+<p>(on PC)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;termux&#34;</span> -f ~/.ssh/id_termux_ed25519
+</span></span></code></pre></div><p>You can press enter to ignore the password easily.</p>
+<p>Now you can the see the public key and private key under the <code>~/.ssh</code></p>
+<p>(on PC)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ls .ssh/id_termux_ed25519*
+</span></span><span style="display:flex;"><span>.ssh/id_termux_ed25519  .ssh/id_termux_ed25519.pub
+</span></span></code></pre></div><p>To make the termux can identify the PC, copy the content in <code>.ssh/id_termux_ed25519.pub</code> to <code>$HOME/.ssh/authorized_keys</code> on Termux</p>
+<p>(on Termux)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ssh-ed25519 ...&#34;</span> &gt;&gt; $HOME/.ssh/authorized_keys
+</span></span></code></pre></div></li>
+<li>
+<p>start openssh service on Termux</p>
+<p>Modify the configure to forbid the password connect</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/PasswordAuthentication yes/PasswordAuthentication no/&#39;</span> $PREFIX/etc/ssh/sshd_config
+</span></span></code></pre></div><p>(on Termux)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sshd
+</span></span></code></pre></div><p>This will make sshd listent on the <strong>8022</strong> port and the ssh client can connect it throught the port.</p>
+</li>
+<li>
+<p>connect</p>
+<p>In order to connect to the termux, we need to know the ip of the phone, you can get it throught the WIFI setting in phone.
+You also can get it use <code>ip addr</code>, but you may have to install iproute2 first.</p>
+<p>(on Termux)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~ $ ip addr
+</span></span><span style="display:flex;"><span>The program ip is not installed. Install it by executing:
+</span></span><span style="display:flex;"><span>pkg install iproute2
+</span></span></code></pre></div><p>Connect to the Termux using <code>ssh -p 8022 -i ~/.ssh/id_termux_ed25519 &lt;ip&gt;</code> and type <code>yes</code> to continue connection.</p>
+</li>
+</ol>
+<h3 id="editor">Editor<a hidden class="anchor" aria-hidden="true" href="#editor">#</a></h3>
+<p>In order to edit file, I firstly install editor. I use neovim here, you can use other if you want.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install neovim
+</span></span></code></pre></div><h3 id="common-software">Common software<a hidden class="anchor" aria-hidden="true" href="#common-software">#</a></h3>
+<p>Install some common software</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install git
+</span></span></code></pre></div><h3 id="development">Development<a hidden class="anchor" aria-hidden="true" href="#development">#</a></h3>
+<p>You can install the language develop kit</p>
+<ul>
+<li>
+<p>C/C++</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install clang
+</span></span></code></pre></div></li>
+<li>
+<p>Python</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install python
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="desktop-environment">Desktop Environment<a hidden class="anchor" aria-hidden="true" href="#desktop-environment">#</a></h3>
+<p>You can install Desktop Environment in Termux Now, for detail you can see <a href="https://github.com/termux/termux-x11">Termux:X11</a>.</p>
+<p>I choose the Xfce for my desktop because it&rsquo;s light.</p>
+<ol>
+<li>
+<p>subscribe x11-repo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install x11-repo
+</span></span></code></pre></div></li>
+<li>
+<p>install the termux-x11</p>
+<p>You have to install the <code>termux-x11-....deb</code>(from <a href="https://github.com/termux/termux-x11/releases">termux-x11-release</a>) on termux.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install &lt;path to termux-x11-...deb&gt;
+</span></span></code></pre></div><p>You can get the termux-x11 app from <a href="https://github.com/termux/termux-x11/releases">termux-x11-release</a> and then install the termux-x11 app on your phone.</p>
+<p>Remember to choose the apk for your phone architecture(you can get it by executing <code>uname -a</code>)</p>
+</li>
+<li>
+<p>install Xfce</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install xfce
+</span></span></code></pre></div></li>
+<li>
+<p>start the Xfce</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>termux-x11 :1 -xstartup <span style="color:#e6db74">&#34;dbus-launch --exit-with-session xfce4-session&#34;</span>
+</span></span></code></pre></div><p>Now you can launch the termux-x11 app to use the Xfce desktop.</p>
+<p>If there is any exception, you can get help from <a href="https://github.com/termux/termux-x11">Termux:X11</a>.</p>
+<p><img alt="termux-x11" loading="lazy" src="/posts/androidterminal-termux/xfce-termux-x11.png" title="termux-x11"></p>
+</li>
+</ol>
+<p>Termux-X11 use the x-org to display, but you also can use vnc to display.</p>
+<ol>
+<li>
+<p>install tigervnc</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install tigervnc
+</span></span></code></pre></div></li>
+<li>
+<p>start vnc</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>vncserver :1
+</span></span></code></pre></div><p>As the first time you start vnc server you have to setup the password.</p>
+<p>Actually after you finish it you can start vnc viewer now, but you will see a black window.</p>
+<p>Now use the <code>vncserver -kill :1</code> to kill the vncserver</p>
+</li>
+<li>
+<p>configure vnc</p>
+<p>Edit the .vnc/xstartup and replace the <code>twm &amp;</code> with <code>xfce4-session &amp;</code> and then restart the vncserver.</p>
+</li>
+<li>
+<p>connect to the vncserver</p>
+<p>I use <code>gtk-vnc</code> on my PC so I connect it using <code>gvncviwer phone_ip:1</code>.</p>
+<p>You also can connect it on your phone use <code>VNC Viewer</code> app</p>
+<p><img alt="vnc" loading="lazy" src="/posts/androidterminal-termux/xfce-vnc.png" title="vnc"></p>
+</li>
+</ol>
+<h3 id="terminal">Terminal<a hidden class="anchor" aria-hidden="true" href="#terminal">#</a></h3>
+<p>I use the <a href="https://github.com/Cabbagec/termux-ohmyzsh/">termux-ohmyzsh</a> to make the terminal more beautiful.</p>
+<ol>
+<li>
+<p>install zsh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install zsh   
+</span></span></code></pre></div></li>
+<li>
+<p>install termux-ohmyzsh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Choose the color schema and font you like and then reboot the Termux.</p>
+</li>
+<li>
+<p>modified the theme</p>
+<p>Because the origin theme show the username and host name with the full path, it&rsquo;s too long for the prompt,
+we modified the theme.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd $HOME/.oh-my-zsh/custom/themes
+</span></span><span style="display:flex;"><span>cp ../../themes/agnoster.zsh-theme ./agnoster-modified.zsh-theme
+</span></span></code></pre></div><p>Then we modified the agnoster-modified.zsh-theme:</p>
+<ul>
+<li>search the <code>prompt_dir</code> function and replace the <code>%~</code> to <code>%1~</code>. It will make the prompt only show the current directory.</li>
+<li>search the <code>prompt_context</code> function and replace the <code>%n@%m</code> with anything you like</li>
+<li>modified $HOME/.zshrc to set <code>ZSH_THEME=&quot;xxx&quot;</code> to <code>ZSH_THEME=&quot;agnoster-modified&quot;</code></li>
+<li>source the .zshrc</li>
+</ul>
+</li>
+</ol>
+<p>If you finish all of above, you will get terminal as below:</p>
+<p><img alt="terminal-terminal2" loading="lazy" src="/posts/androidterminal-termux/termux-terminal2.png"></p>
+<h3 id="proot-distro">proot-distro<a hidden class="anchor" aria-hidden="true" href="#proot-distro">#</a></h3>
+<p><code>proot-distro</code> help you manage the proot linux distribution.</p>
+<p>Use <code>pkg install proot-distro</code> to install the package.</p>
+<p>After that, you can use <code>proot-distro list</code> to see which distribution you can install,
+and then use <code>proot-distro install &lt;distribution&gt;</code> to install the linux.</p>
+<p>Finally, you can use <code>proot-distro login &lt;distribution&gt;</code> to login.</p>
+<p>The proot like the docker, provide you a truely Linux environment, you even can install the DE like Xfce4 in the proot.</p>
+<p><strong>TODO</strong></p>
+<h3 id="install-docker">Install Docker<a hidden class="anchor" aria-hidden="true" href="#install-docker">#</a></h3>
+<p><strong>TODO</strong></p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://apricitychern.github.io/tags/termux/">Termux</a></li>
+      <li><a href="https://apricitychern.github.io/tags/terminal/">Terminal</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://apricitychern.github.io/">Log Book of Apricity</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
